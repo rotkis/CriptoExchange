@@ -8,12 +8,12 @@ package view;
  *
  * @author manga
  */
-public class InvestidorView extends javax.swing.JFrame {
+public class ConfigView extends javax.swing.JFrame {
 
     /**
-     * Creates new form InvestidorView
+     * Creates new form ConfigView
      */
-    public InvestidorView() {
+    public ConfigView() {
         initComponents();
     }
 
@@ -26,42 +26,38 @@ public class InvestidorView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblLogin = new javax.swing.JLabel();
-        btCripto = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        btCI = new javax.swing.JButton();
-        btConfig = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        lblLogin = new javax.swing.JLabel();
+        btMudarSenha = new javax.swing.JButton();
+        btExtrato = new javax.swing.JButton();
+        btVoltar1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setText("Escolha uma das opções:");
+
+        jLabel2.setText("* Alterar Senha");
+
+        jLabel4.setText("* Deletar conta");
+
         lblLogin.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
-        lblLogin.setText("Investidor");
+        lblLogin.setText("Configuração");
 
-        btCripto.setText("Criptomoedas");
-        btCripto.addActionListener(new java.awt.event.ActionListener() {
+        btMudarSenha.setText("Mudar senha");
+        btMudarSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btCriptoActionPerformed(evt);
+                btMudarSenhaActionPerformed(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        jLabel1.setText("Bem vindo ao Banco Cripto exchange");
+        btExtrato.setText("Excluir conta");
 
-        jLabel2.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        jLabel2.setText("Escolha uma das opcoes abaxio :");
-
-        btCI.setText("Carteira de investimento");
-        btCI.addActionListener(new java.awt.event.ActionListener() {
+        btVoltar1.setText("Voltar");
+        btVoltar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btCIActionPerformed(evt);
-            }
-        });
-
-        btConfig.setText("Configurações");
-        btConfig.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btConfigActionPerformed(evt);
+                btVoltar1ActionPerformed(evt);
             }
         });
 
@@ -70,52 +66,53 @@ public class InvestidorView extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(61, 61, 61)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btVoltar1)
+                    .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
+                            .addComponent(btMudarSenha)
+                            .addComponent(btExtrato))
+                        .addGap(39, 39, 39)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
-                            .addComponent(btCI)
-                            .addComponent(btCripto)
-                            .addComponent(btConfig)))
+                            .addComponent(jLabel4)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(150, 150, 150)
+                        .addGap(65, 65, 65)
                         .addComponent(lblLogin)))
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addContainerGap(94, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
+                .addContainerGap()
                 .addComponent(lblLogin)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(12, 12, 12)
                 .addComponent(jLabel1)
-                .addGap(4, 4, 4)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(btCI)
+                .addGap(38, 38, 38)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btMudarSenha)
+                    .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btCripto)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btConfig)
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btExtrato)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btVoltar1)
+                .addGap(0, 110, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btCriptoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCriptoActionPerformed
+    private void btMudarSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMudarSenhaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btCriptoActionPerformed
+    }//GEN-LAST:event_btMudarSenhaActionPerformed
 
-    private void btCIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCIActionPerformed
+    private void btVoltar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltar1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btCIActionPerformed
-
-    private void btConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConfigActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btConfigActionPerformed
+    }//GEN-LAST:event_btVoltar1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -134,30 +131,31 @@ public class InvestidorView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InvestidorView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ConfigView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InvestidorView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ConfigView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InvestidorView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ConfigView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InvestidorView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ConfigView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InvestidorView().setVisible(true);
+                new ConfigView().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btCI;
-    private javax.swing.JButton btConfig;
-    private javax.swing.JButton btCripto;
+    private javax.swing.JButton btExtrato;
+    private javax.swing.JButton btMudarSenha;
+    private javax.swing.JButton btVoltar1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel lblLogin;
     // End of variables declaration//GEN-END:variables
 }
