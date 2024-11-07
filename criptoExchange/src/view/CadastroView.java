@@ -4,6 +4,11 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 /**
  *
  * @author manga
@@ -28,16 +33,16 @@ public class CadastroView extends javax.swing.JFrame {
 
         lblLogin = new javax.swing.JLabel();
         lblUsuario = new javax.swing.JLabel();
-        txtUsuario = new javax.swing.JTextField();
+        txtCpf = new javax.swing.JTextField();
         lblUsuario1 = new javax.swing.JLabel();
         btEntrar = new javax.swing.JButton();
-        txtSenha = new javax.swing.JPasswordField();
+        txtNome = new javax.swing.JPasswordField();
         lblUsuario2 = new javax.swing.JLabel();
-        txtUsuario1 = new javax.swing.JTextField();
+        txtIdade = new javax.swing.JTextField();
         lblUsuario3 = new javax.swing.JLabel();
-        txtSenha1 = new javax.swing.JPasswordField();
+        txtSenha = new javax.swing.JPasswordField();
         lblUsuario4 = new javax.swing.JLabel();
-        txtSenha2 = new javax.swing.JPasswordField();
+        txtCSenha = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -47,10 +52,10 @@ public class CadastroView extends javax.swing.JFrame {
         lblUsuario.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         lblUsuario.setText("CPF:");
 
-        txtUsuario.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
+        txtCpf.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        txtCpf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuarioActionPerformed(evt);
+                txtCpfActionPerformed(evt);
             }
         });
 
@@ -64,6 +69,26 @@ public class CadastroView extends javax.swing.JFrame {
             }
         });
 
+        txtNome.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        txtNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeActionPerformed(evt);
+            }
+        });
+
+        lblUsuario2.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        lblUsuario2.setText("Idade:");
+
+        txtIdade.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        txtIdade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdadeActionPerformed(evt);
+            }
+        });
+
+        lblUsuario3.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        lblUsuario3.setText("Senha:");
+
         txtSenha.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         txtSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,33 +96,13 @@ public class CadastroView extends javax.swing.JFrame {
             }
         });
 
-        lblUsuario2.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        lblUsuario2.setText("Idade:");
-
-        txtUsuario1.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        txtUsuario1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuario1ActionPerformed(evt);
-            }
-        });
-
-        lblUsuario3.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        lblUsuario3.setText("Senha:");
-
-        txtSenha1.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        txtSenha1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSenha1ActionPerformed(evt);
-            }
-        });
-
         lblUsuario4.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         lblUsuario4.setText("Confirmar Senha:");
 
-        txtSenha2.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        txtSenha2.addActionListener(new java.awt.event.ActionListener() {
+        txtCSenha.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        txtCSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSenha2ActionPerformed(evt);
+                txtCSenhaActionPerformed(evt);
             }
         });
 
@@ -113,27 +118,27 @@ public class CadastroView extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblUsuario4)
                                 .addGap(18, 18, 18)
-                                .addComponent(txtSenha2, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtCSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                     .addComponent(lblUsuario2)
                                     .addGap(15, 15, 15)
-                                    .addComponent(txtUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                     .addComponent(lblUsuario3)
                                     .addGap(18, 18, 18)
-                                    .addComponent(txtSenha1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(btEntrar)
                                 .addGroup(layout.createSequentialGroup()
                                     .addGap(63, 63, 63)
                                     .addComponent(lblUsuario)
                                     .addGap(15, 15, 15)
-                                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(layout.createSequentialGroup()
                                     .addGap(39, 39, 39)
                                     .addComponent(lblUsuario1)
                                     .addGap(18, 18, 18)
-                                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(161, 161, 161)
                         .addComponent(lblLogin)))
@@ -147,23 +152,23 @@ public class CadastroView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUsuario)
-                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblUsuario1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUsuario2)
-                    .addComponent(txtUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUsuario3)
-                    .addComponent(txtSenha1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUsuario4)
-                    .addComponent(txtSenha2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addComponent(btEntrar)
                 .addContainerGap())
@@ -172,25 +177,25 @@ public class CadastroView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
+    private void txtCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCpfActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuarioActionPerformed
+    }//GEN-LAST:event_txtCpfActionPerformed
+
+    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeActionPerformed
+
+    private void txtIdadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdadeActionPerformed
 
     private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSenhaActionPerformed
 
-    private void txtUsuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuario1ActionPerformed
+    private void txtCSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCSenhaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuario1ActionPerformed
-
-    private void txtSenha1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenha1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtSenha1ActionPerformed
-
-    private void txtSenha2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenha2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtSenha2ActionPerformed
+    }//GEN-LAST:event_txtCSenhaActionPerformed
 
     private void btEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEntrarActionPerformed
         LoginView lv = new LoginView();
@@ -198,6 +203,103 @@ public class CadastroView extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btEntrarActionPerformed
 
+    public JButton getBtEntrar() {
+        return btEntrar;
+    }
+
+    public void setBtEntrar(JButton btEntrar) {
+        this.btEntrar = btEntrar;
+    }
+
+    public JLabel getLblLogin() {
+        return lblLogin;
+    }
+
+    public void setLblLogin(JLabel lblLogin) {
+        this.lblLogin = lblLogin;
+    }
+
+    public JLabel getLblUsuario() {
+        return lblUsuario;
+    }
+
+    public void setLblUsuario(JLabel lblUsuario) {
+        this.lblUsuario = lblUsuario;
+    }
+
+    public JLabel getLblUsuario1() {
+        return lblUsuario1;
+    }
+
+    public void setLblUsuario1(JLabel lblUsuario1) {
+        this.lblUsuario1 = lblUsuario1;
+    }
+
+    public JLabel getLblUsuario2() {
+        return lblUsuario2;
+    }
+
+    public void setLblUsuario2(JLabel lblUsuario2) {
+        this.lblUsuario2 = lblUsuario2;
+    }
+
+    public JLabel getLblUsuario3() {
+        return lblUsuario3;
+    }
+
+    public void setLblUsuario3(JLabel lblUsuario3) {
+        this.lblUsuario3 = lblUsuario3;
+    }
+
+    public JLabel getLblUsuario4() {
+        return lblUsuario4;
+    }
+
+    public void setLblUsuario4(JLabel lblUsuario4) {
+        this.lblUsuario4 = lblUsuario4;
+    }
+
+    public JPasswordField getTxtCSenha() {
+        return txtCSenha;
+    }
+
+    public void setTxtCSenha(JPasswordField txtCSenha) {
+        this.txtCSenha = txtCSenha;
+    }
+
+    public JTextField getTxtCpf() {
+        return txtCpf;
+    }
+
+    public void setTxtCpf(JTextField txtCpf) {
+        this.txtCpf = txtCpf;
+    }
+
+    public JTextField getTxtIdade() {
+        return txtIdade;
+    }
+
+    public void setTxtIdade(JTextField txtIdade) {
+        this.txtIdade = txtIdade;
+    }
+
+    public JPasswordField getTxtNome() {
+        return txtNome;
+    }
+
+    public void setTxtNome(JPasswordField txtNome) {
+        this.txtNome = txtNome;
+    }
+
+    public JPasswordField getTxtSenha() {
+        return txtSenha;
+    }
+
+    public void setTxtSenha(JPasswordField txtSenha) {
+        this.txtSenha = txtSenha;
+    }
+
+    
  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -208,10 +310,10 @@ public class CadastroView extends javax.swing.JFrame {
     private javax.swing.JLabel lblUsuario2;
     private javax.swing.JLabel lblUsuario3;
     private javax.swing.JLabel lblUsuario4;
+    private javax.swing.JPasswordField txtCSenha;
+    private javax.swing.JTextField txtCpf;
+    private javax.swing.JTextField txtIdade;
+    private javax.swing.JPasswordField txtNome;
     private javax.swing.JPasswordField txtSenha;
-    private javax.swing.JPasswordField txtSenha1;
-    private javax.swing.JPasswordField txtSenha2;
-    private javax.swing.JTextField txtUsuario;
-    private javax.swing.JTextField txtUsuario1;
     // End of variables declaration//GEN-END:variables
 }

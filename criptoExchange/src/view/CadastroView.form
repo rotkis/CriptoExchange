@@ -31,31 +31,31 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="lblUsuario4" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="txtSenha2" min="-2" pref="168" max="-2" attributes="0"/>
+                              <Component id="txtCSenha" min="-2" pref="168" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="lblUsuario2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                                  <Component id="txtUsuario1" min="-2" pref="168" max="-2" attributes="0"/>
+                                  <Component id="txtIdade" min="-2" pref="168" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="lblUsuario3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="txtSenha1" min="-2" pref="168" max="-2" attributes="0"/>
+                                  <Component id="txtSenha" min="-2" pref="168" max="-2" attributes="0"/>
                               </Group>
                               <Component id="btEntrar" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                                   <Component id="lblUsuario" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                                  <Component id="txtUsuario" min="-2" pref="168" max="-2" attributes="0"/>
+                                  <Component id="txtCpf" min="-2" pref="168" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                                   <Component id="lblUsuario1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="txtSenha" min="-2" pref="168" max="-2" attributes="0"/>
+                                  <Component id="txtNome" min="-2" pref="168" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -77,27 +77,27 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtCpf" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtSenha" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtNome" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblUsuario1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblUsuario2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtUsuario1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtIdade" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblUsuario3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtSenha1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtSenha" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblUsuario4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtSenha2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtCSenha" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Component id="btEntrar" min="-2" max="-2" attributes="0"/>
@@ -123,14 +123,14 @@
         <Property name="text" type="java.lang.String" value="CPF:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtUsuario">
+    <Component class="javax.swing.JTextField" name="txtCpf">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="sansserif" size="18" style="0"/>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtUsuarioActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCpfActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblUsuario1">
@@ -149,14 +149,14 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btEntrarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JPasswordField" name="txtSenha">
+    <Component class="javax.swing.JPasswordField" name="txtNome">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="sansserif" size="18" style="0"/>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtSenhaActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNomeActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblUsuario2">
@@ -167,14 +167,14 @@
         <Property name="text" type="java.lang.String" value="Idade:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtUsuario1">
+    <Component class="javax.swing.JTextField" name="txtIdade">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="sansserif" size="18" style="0"/>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtUsuario1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtIdadeActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblUsuario3">
@@ -185,14 +185,14 @@
         <Property name="text" type="java.lang.String" value="Senha:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JPasswordField" name="txtSenha1">
+    <Component class="javax.swing.JPasswordField" name="txtSenha">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="sansserif" size="18" style="0"/>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtSenha1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtSenhaActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblUsuario4">
@@ -203,14 +203,14 @@
         <Property name="text" type="java.lang.String" value="Confirmar Senha:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JPasswordField" name="txtSenha2">
+    <Component class="javax.swing.JPasswordField" name="txtCSenha">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="sansserif" size="18" style="0"/>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtSenha2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCSenhaActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

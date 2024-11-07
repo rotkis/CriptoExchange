@@ -4,6 +4,9 @@
  */
 package view;
 
+import controller.InvestidorController;
+import model.Aluno;
+
 /**
  *
  * @author manga
@@ -13,8 +16,10 @@ public class InvestidorView extends javax.swing.JFrame {
     /**
      * Creates new form InvestidorView
      */
-    public InvestidorView() {
+    public InvestidorView(Aluno aluno) {
         initComponents();
+        
+        lblNome.setText(aluno.getNome());
     }
 
     /**
@@ -32,6 +37,7 @@ public class InvestidorView extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         btCI = new javax.swing.JButton();
         btConfig = new javax.swing.JButton();
+        lblNome = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,6 +71,9 @@ public class InvestidorView extends javax.swing.JFrame {
             }
         });
 
+        lblNome.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
+        lblNome.setText(" ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -81,14 +90,18 @@ public class InvestidorView extends javax.swing.JFrame {
                             .addComponent(btConfig)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(150, 150, 150)
-                        .addComponent(lblLogin)))
+                        .addComponent(lblLogin)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblNome)))
                 .addContainerGap(87, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addComponent(lblLogin)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblLogin)
+                    .addComponent(lblNome))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
                 .addGap(4, 4, 4)
@@ -155,7 +168,6 @@ public class InvestidorView extends javax.swing.JFrame {
 //            }
 //        });
 //    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btCI;
     private javax.swing.JButton btConfig;
@@ -163,5 +175,6 @@ public class InvestidorView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblLogin;
+    private javax.swing.JLabel lblNome;
     // End of variables declaration//GEN-END:variables
 }

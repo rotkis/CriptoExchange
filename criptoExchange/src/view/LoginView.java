@@ -4,6 +4,11 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 /**
  *
  * @author manga
@@ -28,7 +33,7 @@ public class LoginView extends javax.swing.JFrame {
 
         lblLogin = new javax.swing.JLabel();
         lblUsuario = new javax.swing.JLabel();
-        txtUsuario = new javax.swing.JTextField();
+        txtCpf = new javax.swing.JTextField();
         lblUsuario1 = new javax.swing.JLabel();
         btEntrar = new javax.swing.JButton();
         btCadastro = new javax.swing.JButton();
@@ -42,10 +47,10 @@ public class LoginView extends javax.swing.JFrame {
         lblUsuario.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         lblUsuario.setText("CPF:");
 
-        txtUsuario.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
+        txtCpf.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        txtCpf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuarioActionPerformed(evt);
+                txtCpfActionPerformed(evt);
             }
         });
 
@@ -84,7 +89,7 @@ public class LoginView extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(lblUsuario)
                                 .addGap(15, 15, 15)
-                                .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblUsuario1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -102,7 +107,7 @@ public class LoginView extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUsuario)
-                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUsuario1)
@@ -117,9 +122,9 @@ public class LoginView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
+    private void txtCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCpfActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuarioActionPerformed
+    }//GEN-LAST:event_txtCpfActionPerformed
 
     private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
         // TODO add your handling code here:
@@ -135,13 +140,74 @@ public class LoginView extends javax.swing.JFrame {
      * @param args the command line arguments
      */
 
+    public JButton getBtCadastro() {
+        return btCadastro;
+    }
+
+    public void setBtCadastro(JButton btCadastro) {
+        this.btCadastro = btCadastro;
+    }
+
+    public JButton getBtEntrar() {
+        return btEntrar;
+    }
+
+    public void setBtEntrar(JButton btEntrar) {
+        this.btEntrar = btEntrar;
+    }
+
+    public JLabel getLblLogin() {
+        return lblLogin;
+    }
+
+    public void setLblLogin(JLabel lblLogin) {
+        this.lblLogin = lblLogin;
+    }
+
+    public JLabel getLblUsuario() {
+        return lblUsuario;
+    }
+
+    public void setLblUsuario(JLabel lblUsuario) {
+        this.lblUsuario = lblUsuario;
+    }
+
+    public JLabel getLblUsuario1() {
+        return lblUsuario1;
+    }
+
+    public void setLblUsuario1(JLabel lblUsuario1) {
+        this.lblUsuario1 = lblUsuario1;
+    }
+
+    public JTextField getTxtCpf() {
+        return txtCpf;
+    }
+
+    public void setTxtCpf(JTextField txtCpf) {
+        this.txtCpf = txtCpf;
+    }
+
+    public JPasswordField getTxtSenha() {
+        return txtSenha;
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public void setTxtSenha(JPasswordField txtSenha) {
+        this.txtSenha = txtSenha;
+    }
+
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btCadastro;
     private javax.swing.JButton btEntrar;
     private javax.swing.JLabel lblLogin;
     private javax.swing.JLabel lblUsuario;
     private javax.swing.JLabel lblUsuario1;
+    private javax.swing.JTextField txtCpf;
     private javax.swing.JPasswordField txtSenha;
-    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
