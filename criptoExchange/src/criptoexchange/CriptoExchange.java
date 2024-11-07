@@ -4,6 +4,8 @@
  */
 package criptoexchange;
 
+import view.LoginView;
+
 /**
  *
  * @author manga
@@ -14,7 +16,8 @@ public class CriptoExchange {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        LoginView lv = new LoginView();
+        lv.setVisible(true);
     }
     
 }

@@ -26,12 +26,12 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btVoltar" min="-2" max="-2" attributes="0"/>
+                  <Component id="btVoltar" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btMudarSenha" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="btExcluir" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="btVender" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="btComprar" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -44,7 +44,7 @@
                       <Component id="lblLogin" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="94" max="32767" attributes="0"/>
+              <EmptySpace pref="70" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -57,12 +57,12 @@
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btMudarSenha" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btVender" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btExcluir" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btComprar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -80,12 +80,12 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="* Alterar Senha"/>
+        <Property name="text" type="java.lang.String" value="* Vender Cripto"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="* Deletar conta"/>
+        <Property name="text" type="java.lang.String" value="* Comprar Cripto"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblLogin">
@@ -93,20 +93,20 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="DejaVu Sans" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Configura&#xe7;&#xe3;o"/>
+        <Property name="text" type="java.lang.String" value="Criptomoedas"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btMudarSenha">
+    <Component class="javax.swing.JButton" name="btVender">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Mudar senha"/>
+        <Property name="text" type="java.lang.String" value="Vender Cripto"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btMudarSenhaActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btVenderActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btExcluir">
+    <Component class="javax.swing.JButton" name="btComprar">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Excluir conta"/>
+        <Property name="text" type="java.lang.String" value="Comprar cripto"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btVoltar">

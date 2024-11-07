@@ -8,12 +8,12 @@ package view;
  *
  * @author manga
  */
-public class CarteiraInvestimentoView extends javax.swing.JFrame {
+public class CriptoView extends javax.swing.JFrame {
 
     /**
-     * Creates new form CarteiraInvestimentoView
+     * Creates new form CriptoView
      */
-    public CarteiraInvestimentoView() {
+    public CriptoView() {
         initComponents();
     }
 
@@ -26,50 +26,33 @@ public class CarteiraInvestimentoView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblLogin = new javax.swing.JLabel();
-        btSaldo = new javax.swing.JButton();
-        btExtrato = new javax.swing.JButton();
-        btDeposito = new javax.swing.JButton();
-        btSaque = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        lblLogin = new javax.swing.JLabel();
+        btVender = new javax.swing.JButton();
+        btComprar = new javax.swing.JButton();
         btVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblLogin.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
-        lblLogin.setText("Carteira de Investimentos");
-
-        btSaldo.setText("Saldo");
-        btSaldo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btSaldoActionPerformed(evt);
-            }
-        });
-
-        btExtrato.setText("Extrato");
-
-        btDeposito.setText("Deposito");
-
-        btSaque.setText("Saque");
-        btSaque.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btSaqueActionPerformed(evt);
-            }
-        });
-
         jLabel1.setText("Escolha uma das opções:");
 
-        jLabel2.setText("* Consultar o saldo");
+        jLabel2.setText("* Vender Cripto");
 
-        jLabel3.setText("* Depositar");
+        jLabel4.setText("* Comprar Cripto");
 
-        jLabel4.setText("* Consultar o extrato");
+        lblLogin.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
+        lblLogin.setText("Criptomoedas");
 
-        jLabel5.setText("* Sacar");
+        btVender.setText("Vender Cripto");
+        btVender.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btVenderActionPerformed(evt);
+            }
+        });
+
+        btComprar.setText("Comprar cripto");
 
         btVoltar.setText("Voltar");
         btVoltar.addActionListener(new java.awt.event.ActionListener() {
@@ -85,23 +68,20 @@ public class CarteiraInvestimentoView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(61, 61, 61)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btDeposito)
+                    .addComponent(btVoltar)
                     .addComponent(jLabel1)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(lblLogin)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(btSaldo)
-                                .addComponent(btExtrato)
-                                .addComponent(btSaque)
-                                .addComponent(btVoltar))
-                            .addGap(39, 39, 39)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel5)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel2)
-                                .addComponent(jLabel4)))))
-                .addContainerGap(96, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btVender)
+                            .addComponent(btComprar))
+                        .addGap(39, 39, 39)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel4)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addComponent(lblLogin)))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,39 +92,27 @@ public class CarteiraInvestimentoView extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btSaldo)
+                    .addComponent(btVender)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btExtrato)
+                    .addComponent(btComprar)
                     .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btDeposito)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btSaque)
-                    .addComponent(jLabel5))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btVoltar)
-                .addGap(0, 42, Short.MAX_VALUE))
+                .addGap(0, 110, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btSaqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSaqueActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btSaqueActionPerformed
-
-    private void btSaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSaldoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btSaldoActionPerformed
-
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btVoltarActionPerformed
+
+    private void btVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVenderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btVenderActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,35 +131,31 @@ public class CarteiraInvestimentoView extends javax.swing.JFrame {
 //                }
 //            }
 //        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(CarteiraInvestimentoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(CriptoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(CarteiraInvestimentoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(CriptoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(CarteiraInvestimentoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(CriptoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(CarteiraInvestimentoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(CriptoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        }
 //        //</editor-fold>
 //
 //        /* Create and display the form */
 //        java.awt.EventQueue.invokeLater(new Runnable() {
 //            public void run() {
-//                new CarteiraInvestimentoView().setVisible(true);
+//                new CriptoView().setVisible(true);
 //            }
 //        });
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btDeposito;
-    private javax.swing.JButton btExtrato;
-    private javax.swing.JButton btSaldo;
-    private javax.swing.JButton btSaque;
+    private javax.swing.JButton btComprar;
+    private javax.swing.JButton btVender;
     private javax.swing.JButton btVoltar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel lblLogin;
     // End of variables declaration//GEN-END:variables
 }
