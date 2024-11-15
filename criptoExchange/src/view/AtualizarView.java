@@ -4,22 +4,27 @@
  */
 package view;
 
+import controller.ConfigController;
+import controller.InvestidorController;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import model.Investidor;
 
 /**
  *
  * @author manga
  */
 public class AtualizarView extends javax.swing.JFrame {
-
+    private Investidor investidor;
     /**
      * Creates new form AtualizarView
      */
     public AtualizarView() {
         initComponents();
+        c = new ConfigController(this, investidor);
+        i = new InvestidorController(this);
     }
 
     /**
@@ -58,6 +63,11 @@ public class AtualizarView extends javax.swing.JFrame {
         lblUsuario1.setText("Nova Senha:");
 
         btMudar.setText("Mudar");
+        btMudar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btMudarActionPerformed(evt);
+            }
+        });
 
         btVoltar.setText("Voltar");
         btVoltar.addActionListener(new java.awt.event.ActionListener() {
@@ -124,14 +134,16 @@ public class AtualizarView extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCpfActionPerformed
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
-        CadastroView cv = new CadastroView();
-        cv.setVisible(true);
-        this.setVisible(false);
+       i.menu();
     }//GEN-LAST:event_btVoltarActionPerformed
 
     private void txtNovaSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNovaSenhaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNovaSenhaActionPerformed
+
+    private void btMudarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMudarActionPerformed
+        c.atualizar();
+    }//GEN-LAST:event_btMudarActionPerformed
 
 //    /**
 //     * @param args the command line arguments
@@ -223,7 +235,8 @@ public class AtualizarView extends javax.swing.JFrame {
     public void setTxtNovaSenha(JPasswordField txtNovaSenha) {
         this.txtNovaSenha = txtNovaSenha;
     }
-
+    public ConfigController c;
+    public InvestidorController i;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btMudar;
     private javax.swing.JButton btVoltar;

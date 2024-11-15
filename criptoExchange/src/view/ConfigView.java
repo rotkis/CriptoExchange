@@ -4,17 +4,23 @@
  */
 package view;
 
+import controller.ApagarController;
+import controller.InvestidorController;
+import model.Investidor;
+
 /**
  *
  * @author manga
  */
 public class ConfigView extends javax.swing.JFrame {
-
+    private Investidor investidor;
+    private InvestidorController c;
     /**
      * Creates new form ConfigView
      */
     public ConfigView() {
         initComponents();
+        c = new InvestidorController(this);
     }
 
     /**
@@ -53,6 +59,11 @@ public class ConfigView extends javax.swing.JFrame {
         });
 
         btExcluir.setText("Excluir conta");
+        btExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btExcluirActionPerformed(evt);
+            }
+        });
 
         btVoltar.setText("Voltar");
         btVoltar.addActionListener(new java.awt.event.ActionListener() {
@@ -107,12 +118,22 @@ public class ConfigView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btMudarSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMudarSenhaActionPerformed
-        // TODO add your handling code here:
+        AtualizarView av = new AtualizarView();
+        av.setVisible(true);
+        this.setVisible(false);
+        
     }//GEN-LAST:event_btMudarSenhaActionPerformed
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
-        // TODO add your handling code here:
+       c.menu();
     }//GEN-LAST:event_btVoltarActionPerformed
+
+    private void btExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirActionPerformed
+        a.excluir();
+        LoginView lv = new LoginView();
+        lv.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btExcluirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -148,7 +169,7 @@ public class ConfigView extends javax.swing.JFrame {
 //            }
 //        });
 //    }
-
+    public ApagarController a;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btExcluir;
     private javax.swing.JButton btMudarSenha;

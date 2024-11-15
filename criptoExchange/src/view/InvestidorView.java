@@ -4,22 +4,32 @@
  */
 package view;
 
+import DAO.Conexao;
+import DAO.Conn;
 import controller.InvestidorController;
-import model.Aluno;
+import model.Investidor;
 
 /**
  *
  * @author manga
  */
 public class InvestidorView extends javax.swing.JFrame {
-
+    public Conexao conn;
+    private Investidor investidor;
     /**
      * Creates new form InvestidorView
      */
-    public InvestidorView(Aluno aluno) {
+    public InvestidorView(Conexao conn) {
         initComponents();
+        this.conn =  conn;  
+        investidor = InvestidorController.getInvestidorLogado();
+        if (investidor != null) {
+            lblNome.setText(investidor.getNome());
+        } else {
+            lblNome.setText("Investidor não encontrado");
+        }
         
-        lblNome.setText(aluno.getNome());
+        
     }
 
     /**
@@ -134,40 +144,7 @@ public class InvestidorView extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btConfigActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(InvestidorView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(InvestidorView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(InvestidorView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(InvestidorView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new InvestidorView().setVisible(true);
-//            }
-//        });
-//    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btCI;
     private javax.swing.JButton btConfig;

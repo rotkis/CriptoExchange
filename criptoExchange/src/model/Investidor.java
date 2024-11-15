@@ -9,12 +9,10 @@ package model;
  * @author manga
  */
 public class Investidor extends Pessoa{
+    public String nome, cpf, senha, idade;
     
-    public Investidor(String nome, String cpf, String senha, String reais, String bitcoin, String ethereum, String ripple) {
-        super(nome, cpf, senha, reais, bitcoin, ethereum, ripple);
-    }
-    public void Login(){
-        
+    public Investidor(String nome, String cpf, String senha, String idade) {
+        super(nome, cpf,senha, idade);
     }
     public void ConsultarSaldo(){
         

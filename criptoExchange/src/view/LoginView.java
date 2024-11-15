@@ -4,6 +4,7 @@
  */
 package view;
 
+import controller.ControllerLogin;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
@@ -20,6 +21,7 @@ public class LoginView extends javax.swing.JFrame {
      */
     public LoginView() {
         initComponents();
+        c = new ControllerLogin(this);
     }
 
     /**
@@ -58,6 +60,11 @@ public class LoginView extends javax.swing.JFrame {
         lblUsuario1.setText("Senha:");
 
         btEntrar.setText("Entrar");
+        btEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btEntrarActionPerformed(evt);
+            }
+        });
 
         btCadastro.setText("Cadastro");
         btCadastro.addActionListener(new java.awt.event.ActionListener() {
@@ -136,6 +143,10 @@ public class LoginView extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btCadastroActionPerformed
 
+    private void btEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEntrarActionPerformed
+        c.loginAluno();
+    }//GEN-LAST:event_btEntrarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -200,7 +211,7 @@ public class LoginView extends javax.swing.JFrame {
     }
 
     
-    
+    private ControllerLogin c;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btCadastro;
     private javax.swing.JButton btEntrar;

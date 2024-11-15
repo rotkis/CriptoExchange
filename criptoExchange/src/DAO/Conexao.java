@@ -11,10 +11,21 @@ import java.sql.SQLException;
  * @author manga
  */
 public class Conexao {
-    public Connection getConnection() throws SQLException{
-        Connection conexao = DriverManager.getConnection(
-                "jdbc:postgresql://localhost:5432/aluno",
-                "alunos", "fei");
+    private static Conexao uniqueInstance;
+    public static Connection getConnection() throws SQLException{
+        String connect = "jdbc:postgresql://localhost:5432/postgres";
+        String user = "postgres";
+        String pwd = "fei";
+        
+        Connection conexao =  DriverManager.getConnection(connect, user, pwd);
+        System.out.println("PostgreSQL   has been Successfully Connected With Java!");
         return conexao;
+    }
+    
+    public static synchronized Conexao getInstance() {
+        if (uniqueInstance == null) {
+            uniqueInstance = new Conexao();
+        }
+        return uniqueInstance;
     }
 }

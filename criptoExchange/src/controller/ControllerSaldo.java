@@ -3,49 +3,50 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package controller;
-import DAO.InvestidorDAO;
-import view.LoginView;
-import java.sql.Connection;
+
 import DAO.Conexao;
+import DAO.InvestidorDAO;
+import java.sql.Connection;
 import java.sql.ResultSet;
-import javax.swing.JOptionPane;
 import java.sql.SQLException;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import model.Carteira;
 import model.Investidor;
-import view.InvestidorView;
+
 /**
  *
  * @author manga
  */
-public class ControllerLogin {
-    private LoginView view;
-    
+public class ControllerSaldo {
+    private JFrame view;
 
-
-    public ControllerLogin(LoginView view) {
-        this.view = view; 
+    public ControllerSaldo(JFrame view) {
+        this.view = view;
     }
-   
-    
-    public void loginAluno(){
-        Investidor investidor = new Investidor(null, view.getTxtCpf().getText(),
-                                      view.getTxtSenha().getText(), null);
+    public void Saldo(String pwd){
+        
+        Investidor investidor = new Investidor(null, null,
+                                      pwd, null);
         Conexao conexao = new Conexao();
         try {
             Connection conn = conexao.getConnection();
             InvestidorDAO dao = new InvestidorDAO(conn);
-            ResultSet res = dao.consultar(investidor);
+            ResultSet res = dao.read(investidor);
             if (res.next()){
-                JOptionPane.showMessageDialog(view, "Login efetuado!",
+                JOptionPane.showMessageDialog(view, "Acesso liberado!",
                             "Aviso", JOptionPane.INFORMATION_MESSAGE);
                 String nome = res.getString("Nome");
                 String cpf = res.getString("CPF");
                 String senha = res.getString("Senha");
                 String idade = res.getString("Idade");
-                Investidor investidorLogado = new Investidor(nome, cpf, senha, idade);
-                InvestidorController.setInvestidorLogado(investidorLogado);
-                InvestidorController c = new InvestidorController(view);
-                c.menu();
+                double reais = res.getDouble("Reais");
+                double bitcoin = res.getDouble("Bitcoin");
+                double ripple = res.getDouble("Ripple");
+                double etherum = res.getDouble("Etherum");
+                Carteira c= new Carteira(reais, bitcoin, ripple, etherum, nome, cpf, senha, idade);
+                
+                
 
                 
             } else {

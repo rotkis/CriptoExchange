@@ -4,6 +4,7 @@
  */
 package view;
 
+import controller.ControllerCadastro;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
@@ -20,6 +21,7 @@ public class CadastroView extends javax.swing.JFrame {
      */
     public CadastroView() {
         initComponents();
+        c = new ControllerCadastro(this);
     }
 
     /**
@@ -31,18 +33,19 @@ public class CadastroView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
         lblLogin = new javax.swing.JLabel();
         lblUsuario = new javax.swing.JLabel();
         txtCpf = new javax.swing.JTextField();
         lblUsuario1 = new javax.swing.JLabel();
         btEntrar = new javax.swing.JButton();
-        txtNome = new javax.swing.JPasswordField();
         lblUsuario2 = new javax.swing.JLabel();
         txtIdade = new javax.swing.JTextField();
         lblUsuario3 = new javax.swing.JLabel();
         txtSenha = new javax.swing.JPasswordField();
-        lblUsuario4 = new javax.swing.JLabel();
-        txtCSenha = new javax.swing.JPasswordField();
+        txtNome = new javax.swing.JTextField();
+
+        jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,17 +65,10 @@ public class CadastroView extends javax.swing.JFrame {
         lblUsuario1.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         lblUsuario1.setText("Nome:");
 
-        btEntrar.setText("Login");
+        btEntrar.setText("Cadastrar");
         btEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btEntrarActionPerformed(evt);
-            }
-        });
-
-        txtNome.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        txtNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNomeActionPerformed(evt);
             }
         });
 
@@ -96,13 +92,10 @@ public class CadastroView extends javax.swing.JFrame {
             }
         });
 
-        lblUsuario4.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        lblUsuario4.setText("Confirmar Senha:");
-
-        txtCSenha.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        txtCSenha.addActionListener(new java.awt.event.ActionListener() {
+        txtNome.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        txtNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCSenhaActionPerformed(evt);
+                txtNomeActionPerformed(evt);
             }
         });
 
@@ -111,38 +104,33 @@ public class CadastroView extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(161, 161, 161)
+                .addComponent(lblLogin)
+                .addGap(205, 205, 205))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(89, 89, 89)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblUsuario4)
+                    .addComponent(btEntrar)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(lblUsuario2)
+                                .addGap(15, 15, 15)
+                                .addComponent(txtIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(lblUsuario3)
                                 .addGap(18, 18, 18)
-                                .addComponent(txtCSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(lblUsuario2)
-                                    .addGap(15, 15, 15)
-                                    .addComponent(txtIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(lblUsuario3)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(btEntrar)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(63, 63, 63)
-                                    .addComponent(lblUsuario)
-                                    .addGap(15, 15, 15)
-                                    .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(39, 39, 39)
-                                    .addComponent(lblUsuario1)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(161, 161, 161)
-                        .addComponent(lblLogin)))
-                .addGap(73, 73, 73))
+                                .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addComponent(lblUsuario)
+                                .addGap(15, 15, 15)
+                                .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblUsuario1)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(88, 88, 88))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,8 +143,8 @@ public class CadastroView extends javax.swing.JFrame {
                     .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblUsuario1))
+                    .addComponent(lblUsuario1)
+                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUsuario2)
@@ -165,11 +153,7 @@ public class CadastroView extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUsuario3)
                     .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblUsuario4)
-                    .addComponent(txtCSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
+                .addGap(67, 67, 67)
                 .addComponent(btEntrar)
                 .addContainerGap())
         );
@@ -181,10 +165,6 @@ public class CadastroView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCpfActionPerformed
 
-    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNomeActionPerformed
-
     private void txtIdadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdadeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIdadeActionPerformed
@@ -193,15 +173,17 @@ public class CadastroView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSenhaActionPerformed
 
-    private void txtCSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCSenhaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCSenhaActionPerformed
-
     private void btEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEntrarActionPerformed
+        c.salvarAluno();
         LoginView lv = new LoginView();
         lv.setVisible(true);
         this.setVisible(false);
+        
     }//GEN-LAST:event_btEntrarActionPerformed
+
+    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeActionPerformed
 
     public JButton getBtEntrar() {
         return btEntrar;
@@ -251,21 +233,21 @@ public class CadastroView extends javax.swing.JFrame {
         this.lblUsuario3 = lblUsuario3;
     }
 
-    public JLabel getLblUsuario4() {
-        return lblUsuario4;
+    public JTextField getTxtNome() {
+        return txtNome;
     }
 
-    public void setLblUsuario4(JLabel lblUsuario4) {
-        this.lblUsuario4 = lblUsuario4;
+    public void setTxtNome(JTextField txtNome) {
+        this.txtNome = txtNome;
     }
 
-    public JPasswordField getTxtCSenha() {
-        return txtCSenha;
-    }
+    
 
-    public void setTxtCSenha(JPasswordField txtCSenha) {
-        this.txtCSenha = txtCSenha;
-    }
+    
+
+    
+
+    
 
     public JTextField getTxtCpf() {
         return txtCpf;
@@ -283,13 +265,9 @@ public class CadastroView extends javax.swing.JFrame {
         this.txtIdade = txtIdade;
     }
 
-    public JPasswordField getTxtNome() {
-        return txtNome;
-    }
+    
 
-    public void setTxtNome(JPasswordField txtNome) {
-        this.txtNome = txtNome;
-    }
+    
 
     public JPasswordField getTxtSenha() {
         return txtSenha;
@@ -301,19 +279,18 @@ public class CadastroView extends javax.swing.JFrame {
 
     
  
-
+    private ControllerCadastro c; 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btEntrar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel lblLogin;
     private javax.swing.JLabel lblUsuario;
     private javax.swing.JLabel lblUsuario1;
     private javax.swing.JLabel lblUsuario2;
     private javax.swing.JLabel lblUsuario3;
-    private javax.swing.JLabel lblUsuario4;
-    private javax.swing.JPasswordField txtCSenha;
     private javax.swing.JTextField txtCpf;
     private javax.swing.JTextField txtIdade;
-    private javax.swing.JPasswordField txtNome;
+    private javax.swing.JTextField txtNome;
     private javax.swing.JPasswordField txtSenha;
     // End of variables declaration//GEN-END:variables
 }

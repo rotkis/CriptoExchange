@@ -4,17 +4,22 @@
  */
 package view;
 
+import controller.InvestidorController;
+import model.Investidor;
+
 /**
  *
  * @author manga
  */
 public class CarteiraInvestimentoView extends javax.swing.JFrame {
-
+    private Investidor investidor;
+    private InvestidorController c;
     /**
      * Creates new form CarteiraInvestimentoView
      */
     public CarteiraInvestimentoView() {
         initComponents();
+        c = new InvestidorController(this);
     }
 
     /**
@@ -143,7 +148,7 @@ public class CarteiraInvestimentoView extends javax.swing.JFrame {
     }//GEN-LAST:event_btSaldoActionPerformed
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
-        // TODO add your handling code here:
+       c.menu();
     }//GEN-LAST:event_btVoltarActionPerformed
 
     /**

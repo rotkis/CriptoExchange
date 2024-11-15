@@ -3,13 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package controller;
-import DAO.AlunoDAO;
+import DAO.InvestidorDAO;
 import DAO.Conexao;
-import model.Aluno;
 import view.CadastroView;
 import java.sql.Connection;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import model.Investidor;
 /**
  *
  * @author manga
@@ -25,17 +25,18 @@ public class ControllerCadastro {
         String cpf = view.getTxtCpf().getText();
         String senha = view.getTxtSenha().getText();
         String idade = view.getTxtIdade().getText();
-        Aluno aluno = new Aluno(nome, cpf, senha,idade);
+        Investidor investidor = new Investidor(nome, cpf, senha,idade);
         Conexao conexao = new Conexao();
         try {
-            Connection conn = conexao.getConnection();
-            AlunoDAO dao = new AlunoDAO(conn);
-            dao.inserir(aluno);
-            JOptionPane.showMessageDialog(view, "Aluno cadastrado!",
-                    "Aviso", JOptionPane.INFORMATION_MESSAGE);
             
+            Connection conn = conexao.getConnection();
+            InvestidorDAO dao = new InvestidorDAO(conn);
+            dao.inserir(investidor);
+            JOptionPane.showMessageDialog(view, "Investidor cadastrado!",
+                    "Aviso", JOptionPane.INFORMATION_MESSAGE);
         } catch (SQLException e){
-            JOptionPane.showMessageDialog(view, "Aluno não cadastrado!",
+            System.out.println("Ocorreu um erro no banco: "  + e.getMessage());
+            JOptionPane.showMessageDialog(view, "Investidor não cadastrado!",
                     "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }

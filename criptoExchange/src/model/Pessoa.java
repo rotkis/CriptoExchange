@@ -9,16 +9,13 @@ package model;
  * @author manga
  */
 public class Pessoa {
-    protected String nome, cpf, senha, reais, bitcoin, ethereum,ripple;
+    protected String nome, cpf, senha, idade;
 
-    public Pessoa(String nome, String cpf, String senha, String reais, String bitcoin, String ethereum, String ripple) {
+    public Pessoa(String nome, String cpf, String senha, String idade) {
         this.nome = nome;
         this.cpf = cpf;
         this.senha = senha;
-        this.reais = reais;
-        this.bitcoin = bitcoin;
-        this.ethereum = ethereum;
-        this.ripple = ripple;
+        this.idade = idade;
     }
 
     public String getNome() {
@@ -45,36 +42,14 @@ public class Pessoa {
         this.senha = senha;
     }
 
-    public String getReais() {
-        return reais;
+    public String getIdade() {
+        return idade;
     }
 
-    public void setReais(String reais) {
-        this.reais = reais;
+    public void setIdade(String idade) {
+        this.idade = idade;
     }
 
-    public String getBitcoin() {
-        return bitcoin;
-    }
-
-    public void setBitcoin(String bitcoin) {
-        this.bitcoin = bitcoin;
-    }
-
-    public String getEthereum() {
-        return ethereum;
-    }
-
-    public void setEthereum(String ethereum) {
-        this.ethereum = ethereum;
-    }
-
-    public String getRipple() {
-        return ripple;
-    }
-
-    public void setRipple(String ripple) {
-        this.ripple = ripple;
-    }
+    
     
 }
