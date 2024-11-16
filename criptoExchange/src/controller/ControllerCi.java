@@ -112,7 +112,7 @@ public class ControllerCi {
 
             // Consulta o extrato
             
-            System.out.println(investidor.getCpf());
+            
             ResultSet extrato = investidorDAO.consultarExtrato(investidor.getCpf());
             
             StringBuilder historico = new StringBuilder("Nome: "+investidor.getNome()+"\nExtrato:\n");

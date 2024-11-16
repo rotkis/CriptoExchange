@@ -48,6 +48,7 @@ public class InvestidorView extends javax.swing.JFrame {
         btCI = new javax.swing.JButton();
         btConfig = new javax.swing.JButton();
         lblNome = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,6 +85,13 @@ public class InvestidorView extends javax.swing.JFrame {
         lblNome.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
         lblNome.setText(" ");
 
+        jButton1.setText("Sair");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -91,18 +99,20 @@ public class InvestidorView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(btCI)
-                            .addComponent(btCripto)
-                            .addComponent(btConfig)))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(150, 150, 150)
                         .addComponent(lblLogin)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblNome)))
+                        .addComponent(lblNome))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(63, 63, 63)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton1)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel1)
+                                .addComponent(jLabel2)
+                                .addComponent(btCI)
+                                .addComponent(btCripto)
+                                .addComponent(btConfig)))))
                 .addContainerGap(87, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -122,14 +132,18 @@ public class InvestidorView extends javax.swing.JFrame {
                 .addComponent(btCripto)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btConfig)
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(56, 56, 56))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btCriptoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCriptoActionPerformed
-        
+        CriptoView cv = new CriptoView();
+        cv.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btCriptoActionPerformed
 
     private void btCIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCIActionPerformed
@@ -144,11 +158,16 @@ public class InvestidorView extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btConfigActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btCI;
     private javax.swing.JButton btConfig;
     private javax.swing.JButton btCripto;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblLogin;
