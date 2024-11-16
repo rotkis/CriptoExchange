@@ -18,7 +18,7 @@ public abstract class Etherum extends Carteira implements Tarifacao{
         return taxa;
     }
     public static double vendaTaxa(){
-        double taxa = (valor *1.02); 
+        double taxa = (valor *0.98); 
         return taxa;
     }
 }

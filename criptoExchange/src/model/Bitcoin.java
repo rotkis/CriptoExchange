@@ -18,7 +18,7 @@ public abstract class Bitcoin extends Carteira implements Tarifacao{
         return taxa;
     }
     public static double vendaTaxa(){
-        double taxa = (valor *1.03); 
+        double taxa = (valor *0.97); 
         return taxa;
     }
 }

@@ -4,17 +4,24 @@
  */
 package view;
 
+import controller.ControllerCripto;
+import controller.InvestidorController;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author manga
  */
 public class VendaView extends javax.swing.JFrame {
-
+    private InvestidorController c;
+    private ControllerCripto cc;
     /**
      * Creates new form VendaView
      */
     public VendaView() {
         initComponents();
+        c =  new InvestidorController(this);
+        cc = new ControllerCripto();
     }
 
     /**
@@ -45,10 +52,25 @@ public class VendaView extends javax.swing.JFrame {
         });
 
         jButton1.setText("Ethereum");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Bitcoin");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Ripple");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -91,10 +113,23 @@ public class VendaView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
-        CadastroView cv = new CadastroView();
-        cv.setVisible(true);
-        this.setVisible(false);
+        c.menu();
     }//GEN-LAST:event_btVoltarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String senha = JOptionPane.showInputDialog("Digite a senha: ");
+        cc.venderEtherum(senha);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       String senha = JOptionPane.showInputDialog("Digite a senha: ");
+        cc.venderBitcoin(senha);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        String senha = JOptionPane.showInputDialog("Digite a senha: ");
+        cc.venderRipple(senha);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 //    /**
 //     * @param args the command line arguments

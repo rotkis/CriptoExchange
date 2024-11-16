@@ -18,7 +18,7 @@ public abstract class Ripple extends Carteira implements Tarifacao{
         return taxa;
     }
     public static double vendaTaxa(){
-        double taxa = (valor *1.01); 
+        double taxa = (valor *0.99); 
         return taxa;
     }
 }
