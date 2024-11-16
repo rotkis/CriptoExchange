@@ -4,17 +4,23 @@
  */
 package view;
 
+import controller.ControllerCi;
+import controller.InvestidorController;
+
 /**
  *
  * @author manga
  */
 public class SaqueView extends javax.swing.JFrame {
-
+    private InvestidorController c;
+    private ControllerCi ci;
     /**
      * Creates new form SaqueView
      */
     public SaqueView() {
         initComponents();
+        c = new InvestidorController(this); 
+        ci =  new ControllerCi();
     }
 
     /**
@@ -48,6 +54,11 @@ public class SaqueView extends javax.swing.JFrame {
         });
 
         btSaque.setText("Sacar");
+        btSaque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSaqueActionPerformed(evt);
+            }
+        });
 
         btVoltar.setText("Voltar");
         btVoltar.addActionListener(new java.awt.event.ActionListener() {
@@ -103,43 +114,13 @@ public class SaqueView extends javax.swing.JFrame {
     }//GEN-LAST:event_txtValorActionPerformed
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
-        // TODO add your handling code here:
+        c.menu();
     }//GEN-LAST:event_btVoltarActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(SaqueView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(SaqueView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(SaqueView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(SaqueView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new SaqueView().setVisible(true);
-//            }
-//        });
-//    }
+    private void btSaqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSaqueActionPerformed
+        double valor = Double.parseDouble(this.txtValor.getText());
+        ci.saque(valor, "Real");
+    }//GEN-LAST:event_btSaqueActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btSaque;

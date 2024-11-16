@@ -106,11 +106,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Extrato"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btExtratoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btDeposito">
       <Properties>
         <Property name="text" type="java.lang.String" value="Deposito"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btDepositoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btSaque">
       <Properties>

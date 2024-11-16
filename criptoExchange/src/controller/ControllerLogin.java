@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 import java.sql.SQLException;
 import javax.swing.JFrame;
+import model.Carteira;
 import model.Investidor;
 import view.InvestidorView;
 /**
@@ -28,7 +29,7 @@ public class ControllerLogin {
    
     
     public void loginAluno(){
-        Investidor investidor = new Investidor(null, view.getTxtCpf().getText(),
+        Carteira investidor = new Carteira(null,null,null,null,null, view.getTxtCpf().getText(),
                                       view.getTxtSenha().getText(), null);
         Conexao conexao = new Conexao();
         try {
@@ -42,7 +43,11 @@ public class ControllerLogin {
                 String cpf = res.getString("CPF");
                 String senha = res.getString("Senha");
                 String idade = res.getString("Idade");
-                Investidor investidorLogado = new Investidor(nome, cpf, senha, idade);
+                String reais = res.getString("Real");
+                String ripple = res.getString("Ripple");
+                String bitcoin = res.getString("Bitcoin");
+                String etherum = res.getString("Etherum");
+                Carteira investidorLogado = new Carteira(reais,bitcoin,ripple,etherum,nome, cpf, senha, idade);
                 InvestidorController.setInvestidorLogado(investidorLogado);
                 InvestidorController c = new InvestidorController(view);
                 c.menu();

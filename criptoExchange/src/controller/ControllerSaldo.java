@@ -24,15 +24,19 @@ public class ControllerSaldo {
     public ControllerSaldo(JFrame view) {
         this.view = view;
     }
-    public void Saldo(String pwd){
+    public String Saldo(String pwd){
         
-        Investidor investidor = new Investidor(null, null,
-                                      pwd, null);
+        Carteira investidor = new Carteira(null,null,null,null,"", "",pwd, "");
+        
         Conexao conexao = new Conexao();
+       
         try {
             Connection conn = conexao.getConnection();
+           
             InvestidorDAO dao = new InvestidorDAO(conn);
-            ResultSet res = dao.read(investidor);
+            
+            ResultSet res = dao.read(investidor,pwd);
+            
             if (res.next()){
                 JOptionPane.showMessageDialog(view, "Acesso liberado!",
                             "Aviso", JOptionPane.INFORMATION_MESSAGE);
@@ -40,22 +44,34 @@ public class ControllerSaldo {
                 String cpf = res.getString("CPF");
                 String senha = res.getString("Senha");
                 String idade = res.getString("Idade");
-                double reais = res.getDouble("Reais");
-                double bitcoin = res.getDouble("Bitcoin");
-                double ripple = res.getDouble("Ripple");
-                double etherum = res.getDouble("Etherum");
+                                
+                String reais = res.getString("Real");
+                                
+                String bitcoin = res.getString("Bitcoin");
+                                
+                String ripple = res.getString("Ripple");
+                                
+                String etherum = res.getString("Etherum");
+                                
+                System.out.println("Nome: " + res.getString("Nome"));
+                System.out.println("CPF: " + res.getString("CPF"));
+                System.out.println("Idade: " + res.getString("Idade"));
+
                 Carteira c= new Carteira(reais, bitcoin, ripple, etherum, nome, cpf, senha, idade);
                 
+                String saldo = c.saldo();
                 
+                return saldo;
 
                 
             } else {
-                JOptionPane.showMessageDialog(view, "Login nao efetuado!",
+                JOptionPane.showMessageDialog(view, "Acesso negado!",
                             "Erro", JOptionPane.ERROR_MESSAGE);
             } 
              
         } catch(SQLException e){
                     JOptionPane.showMessageDialog(view, "Erro de conexao!", "Erro", JOptionPane.ERROR_MESSAGE);
     }
- }
+        return "";
+  }
 }

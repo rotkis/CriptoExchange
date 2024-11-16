@@ -9,9 +9,9 @@ package model;
  * @author manga
  */
 public class Carteira extends Investidor{
-    private double reais,bitcoin ,  ripple, etherum;
+    private String reais,bitcoin ,  ripple, etherum;
 
-    public Carteira(double reais, double bitcoin, double ripple, double etherum, String nome, String cpf, String senha, String idade) {
+    public Carteira(String reais, String bitcoin, String ripple, String etherum, String nome, String cpf, String senha, String idade) {
         super(nome, cpf, senha, idade);
         this.reais = reais;
         this.bitcoin = bitcoin;
@@ -19,8 +19,40 @@ public class Carteira extends Investidor{
         this.etherum = etherum;
     }
     public String saldo(){
-        String res = "Nome: "+ nome+ " CPF: "+ cpf + " Idade: " + idade+"\nReais: "+ reais+ " Bitcoin: " + bitcoin + " Ripple: "+ripple+" Etherum: "+ etherum;
+        String res = "Nome: "+ getNome()+ " CPF: "+ getCpf() + " Idade: " + getIdade() +"\nReais: "+ reais+ " Bitcoin: " + bitcoin + " Ripple: "+ripple+" Etherum: "+ etherum;
         return res;
+    }
+
+    public String getReais() {
+        return reais;
+    }
+
+    public void setReais(String reais) {
+        this.reais = reais;
+    }
+
+    public String getBitcoin() {
+        return bitcoin;
+    }
+
+    public void setBitcoin(String bitcoin) {
+        this.bitcoin = bitcoin;
+    }
+
+    public String getRipple() {
+        return ripple;
+    }
+
+    public void setRipple(String ripple) {
+        this.ripple = ripple;
+    }
+
+    public String getEtherum() {
+        return etherum;
+    }
+
+    public void setEtherum(String etherum) {
+        this.etherum = etherum;
     }
     
 }

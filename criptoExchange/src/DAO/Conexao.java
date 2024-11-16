@@ -18,7 +18,7 @@ public class Conexao {
         String pwd = "fei";
         
         Connection conexao =  DriverManager.getConnection(connect, user, pwd);
-        System.out.println("PostgreSQL   has been Successfully Connected With Java!");
+        //System.out.println("PostgreSQL   has been Successfully Connected With Java!");
         return conexao;
     }
     

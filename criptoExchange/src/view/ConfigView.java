@@ -6,6 +6,7 @@ package view;
 
 import controller.ApagarController;
 import controller.InvestidorController;
+import model.Carteira;
 import model.Investidor;
 
 /**
@@ -14,6 +15,7 @@ import model.Investidor;
  */
 public class ConfigView extends javax.swing.JFrame {
     private Investidor investidor;
+    private Carteira cart;
     private InvestidorController c;
     /**
      * Creates new form ConfigView
@@ -21,6 +23,7 @@ public class ConfigView extends javax.swing.JFrame {
     public ConfigView() {
         initComponents();
         c = new InvestidorController(this);
+        a = new ApagarController(cart,this);
     }
 
     /**
@@ -130,9 +133,7 @@ public class ConfigView extends javax.swing.JFrame {
 
     private void btExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirActionPerformed
         a.excluir();
-        LoginView lv = new LoginView();
-        lv.setVisible(true);
-        this.setVisible(false);
+        System.exit(0);
     }//GEN-LAST:event_btExcluirActionPerformed
 
     /**

@@ -4,17 +4,27 @@
  */
 package view;
 
+import DAO.Conexao;
+import DAO.InvestidorDAO;
+import controller.ControllerCi;
+import controller.InvestidorController;
+import java.sql.Connection;
+import javax.swing.JTextField;
+
 /**
  *
  * @author manga
  */
 public class DepositoView extends javax.swing.JFrame {
-
+    private ControllerCi ci;
+    private InvestidorController c;
     /**
      * Creates new form DepositoView
      */
     public DepositoView() {
         initComponents();
+       c = new InvestidorController(this); 
+        ci =  new ControllerCi();
     }
 
     /**
@@ -48,6 +58,11 @@ public class DepositoView extends javax.swing.JFrame {
         });
 
         btDeposito.setText("Depositar");
+        btDeposito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btDepositoActionPerformed(evt);
+            }
+        });
 
         btVoltar.setText("Voltar");
         btVoltar.addActionListener(new java.awt.event.ActionListener() {
@@ -100,44 +115,23 @@ public class DepositoView extends javax.swing.JFrame {
     }//GEN-LAST:event_txtValorActionPerformed
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
-        // TODO add your handling code here:
+        c.menu();
     }//GEN-LAST:event_btVoltarActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(DepositoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(DepositoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(DepositoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(DepositoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new DepositoView().setVisible(true);
-//            }
-//        });
-//    }
+    private void btDepositoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDepositoActionPerformed
+        double valor = Double.parseDouble(this.txtValor.getText());
+        ci.deposito(valor, "Real");
+    }//GEN-LAST:event_btDepositoActionPerformed
 
+    public JTextField getTxtValor() {
+        return txtValor;
+    }
+
+    public void setTxtValor(JTextField txtValor) {
+        this.txtValor = txtValor;
+    }
+
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btDeposito;
     private javax.swing.JButton btVoltar;

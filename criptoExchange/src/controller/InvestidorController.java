@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import model.Carteira;
 import model.Investidor;
 /**
  *
@@ -18,13 +19,13 @@ import model.Investidor;
  */
 public class InvestidorController {
     private JFrame views;
-    private static Investidor investidorLogado;
+    private static Carteira investidorLogado;
 
-    public static Investidor getInvestidorLogado() {
+    public static Carteira getInvestidorLogado() {
         return investidorLogado;
     }
 
-    public static void setInvestidorLogado(Investidor investidorLogado) {
+    public static void setInvestidorLogado(Carteira investidorLogado) {
         InvestidorController.investidorLogado = investidorLogado;
     }
     

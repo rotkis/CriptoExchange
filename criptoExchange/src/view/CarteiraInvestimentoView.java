@@ -4,7 +4,9 @@
  */
 package view;
 
+import controller.ControllerCi;
 import controller.InvestidorController;
+import javax.swing.JOptionPane;
 import model.Investidor;
 
 /**
@@ -14,12 +16,14 @@ import model.Investidor;
 public class CarteiraInvestimentoView extends javax.swing.JFrame {
     private Investidor investidor;
     private InvestidorController c;
+    private ControllerCi ci;
     /**
      * Creates new form CarteiraInvestimentoView
      */
     public CarteiraInvestimentoView() {
         initComponents();
         c = new InvestidorController(this);
+        ci =  new ControllerCi();
     }
 
     /**
@@ -56,8 +60,18 @@ public class CarteiraInvestimentoView extends javax.swing.JFrame {
         });
 
         btExtrato.setText("Extrato");
+        btExtrato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btExtratoActionPerformed(evt);
+            }
+        });
 
         btDeposito.setText("Deposito");
+        btDeposito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btDepositoActionPerformed(evt);
+            }
+        });
 
         btSaque.setText("Saque");
         btSaque.addActionListener(new java.awt.event.ActionListener() {
@@ -140,16 +154,30 @@ public class CarteiraInvestimentoView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btSaqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSaqueActionPerformed
-        // TODO add your handling code here:
+        SaqueView sqv = new SaqueView();
+        sqv.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btSaqueActionPerformed
 
     private void btSaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSaldoActionPerformed
-        // TODO add your handling code here:
+        String senha = JOptionPane.showInputDialog("Digite a senha: ");
+        ci.consultarSaldo(senha);
     }//GEN-LAST:event_btSaldoActionPerformed
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
        c.menu();
     }//GEN-LAST:event_btVoltarActionPerformed
+
+    private void btExtratoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExtratoActionPerformed
+        String senha = JOptionPane.showInputDialog("Digite a senha: ");
+        ci.consultarExtrato(senha);
+    }//GEN-LAST:event_btExtratoActionPerformed
+
+    private void btDepositoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDepositoActionPerformed
+        DepositoView dv =  new DepositoView();
+        dv.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btDepositoActionPerformed
 
     /**
      * @param args the command line arguments
