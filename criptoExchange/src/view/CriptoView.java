@@ -4,17 +4,44 @@
  */
 package view;
 
+import DAO.Conexao;
+import DAO.InvestidorDAO;
+import controller.ControllerCripto;
+import controller.InvestidorController;
+import java.sql.Connection;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import model.Carteira;
+import model.Moedas;
+
 /**
  *
  * @author manga
  */
 public class CriptoView extends javax.swing.JFrame {
-
+    private ControllerCripto cc;
+    private InvestidorDAO investidorDAO;
+    private Conexao conn;
+    private Carteira investidor;
+    private InvestidorController c;
     /**
      * Creates new form CriptoView
      */
     public CriptoView() {
         initComponents();
+        cc = new ControllerCripto();
+        c =  new InvestidorController(this);
+        investidor = InvestidorController.getInvestidorLogado();
+        Conexao conexao = new Conexao();
+        try {
+            Connection conn = conexao.getConnection();
+            investidorDAO = new InvestidorDAO(conn);
+            
+            lblCotacao.setText(String.format("%.2f%%", (investidorDAO.consultarCotacao()- 1) * 100));
+            } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Erro ao realizar a cotacao: " + e.getMessage());
+        }
     }
 
     /**
@@ -33,6 +60,8 @@ public class CriptoView extends javax.swing.JFrame {
         btVender = new javax.swing.JButton();
         btComprar = new javax.swing.JButton();
         btVoltar = new javax.swing.JButton();
+        btCotacao = new javax.swing.JButton();
+        lblCotacao = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,6 +95,16 @@ public class CriptoView extends javax.swing.JFrame {
             }
         });
 
+        btCotacao.setText("Atualizar Cotação");
+        btCotacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCotacaoActionPerformed(evt);
+            }
+        });
+
+        lblCotacao.setText("* aqui");
+        lblCotacao.setToolTipText("");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -76,17 +115,19 @@ public class CriptoView extends javax.swing.JFrame {
                     .addComponent(btVoltar)
                     .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addComponent(lblLogin))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btVender)
-                            .addComponent(btComprar))
+                            .addComponent(btComprar)
+                            .addComponent(btCotacao))
                         .addGap(39, 39, 39)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblCotacao)
                             .addComponent(jLabel2)
-                            .addComponent(jLabel4)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addComponent(lblLogin)))
-                .addContainerGap(70, Short.MAX_VALUE))
+                            .addComponent(jLabel4))))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,16 +144,20 @@ public class CriptoView extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btComprar)
                     .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btCotacao)
+                    .addComponent(lblCotacao))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btVoltar)
-                .addGap(0, 110, Short.MAX_VALUE))
+                .addGap(0, 81, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
-        // TODO add your handling code here:
+        c.menu();
     }//GEN-LAST:event_btVoltarActionPerformed
 
     private void btVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVenderActionPerformed
@@ -127,14 +172,20 @@ public class CriptoView extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btComprarActionPerformed
 
+    private void btCotacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCotacaoActionPerformed
+        lblCotacao.setText(String.valueOf(cc.atualizarCotacao()));
+    }//GEN-LAST:event_btCotacaoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btComprar;
+    private javax.swing.JButton btCotacao;
     private javax.swing.JButton btVender;
     private javax.swing.JButton btVoltar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel lblCotacao;
     private javax.swing.JLabel lblLogin;
     // End of variables declaration//GEN-END:variables
 }

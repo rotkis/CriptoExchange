@@ -115,4 +115,37 @@ public class InvestidorDAO {
         statement.setString(1, cpf);
         return statement.executeQuery(); // executeQuery já retorna o ResultSet
     } 
+   
+   public void inserirCotacao(double taxa) throws SQLException {
+       String sql = "INSERT INTO cotacao (cotacao) VALUES (?)";
+        PreparedStatement statement = conn.prepareStatement(sql);
+        statement.setDouble(1, taxa);
+        statement.execute();
+   }
+   public void atualizarCotacao(double taxa) throws SQLException {
+    String sql = "UPDATE cotacao SET cotacao = ? ";
+    PreparedStatement statement = conn.prepareStatement(sql);
+    statement.setDouble(1, taxa);
+    statement.execute();
+   }
+   public boolean existeCotacao() throws SQLException {
+    String sql = "SELECT COUNT(*) AS total FROM cotacao";
+    PreparedStatement statement = conn.prepareStatement(sql);
+    ResultSet rs = statement.executeQuery();
+    if (rs.next()) {
+        return rs.getInt("total") > 0;
+    }
+    return false;
+}
+   public double consultarCotacao() throws SQLException {
+    String sql = "SELECT cotacao FROM cotacao"; // Limita a consulta ao primeiro valor
+    PreparedStatement statement = conn.prepareStatement(sql);
+    ResultSet resultSet = statement.executeQuery();
+    
+    if (resultSet.next()) {
+        return resultSet.getDouble("cotacao"); // Retorna o valor da coluna cotacao
+    } else {
+        throw new SQLException("Nenhuma cotação encontrada."); // Trata o caso de tabela vazia
+    }
+}
 }

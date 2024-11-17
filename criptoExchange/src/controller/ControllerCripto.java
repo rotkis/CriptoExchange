@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 import model.Bitcoin;
 import model.Carteira;
 import model.Etherum;
+import model.Moedas;
 import model.Ripple;
 
 /**
@@ -45,7 +46,7 @@ public class ControllerCripto {
             double quantidadeAtualEthereum = Double.parseDouble(resultado.getString("Etherum"));
 
             // Cálculo do custo total
-            double custoTotal = Etherum.compraTaxa() * Double.parseDouble(valor);
+            double custoTotal = Etherum.compraTaxa() * Double.parseDouble(valor)* investidorDAO.consultarCotacao();
                 if (saldoAtual < custoTotal) {
                     JOptionPane.showMessageDialog(null, "Valor inválido para compra!"); 
                     return;
@@ -85,7 +86,7 @@ public class ControllerCripto {
                 double saldoAtual = Double.parseDouble(resultado.getString("Real"));
                 double quantidadeAtualBitcoin = Double.parseDouble(resultado.getString("Bitcoin"));
 
-                double custoTotal = Bitcoin.compraTaxa() * Double.parseDouble(valor);
+                double custoTotal = Bitcoin.compraTaxa() * Double.parseDouble(valor) * investidorDAO.consultarCotacao();
                 if (saldoAtual < custoTotal) {
                     JOptionPane.showMessageDialog(null, "Valor inválido para compra!");
                     return;
@@ -125,7 +126,7 @@ public class ControllerCripto {
                 double saldoAtual = Double.parseDouble(resultado.getString("Real"));
                 double quantidadeAtualRipple = Double.parseDouble(resultado.getString("Ripple"));
 
-                double custoTotal = Ripple.compraTaxa() * Double.parseDouble(valor);
+                double custoTotal = Ripple.compraTaxa() * Double.parseDouble(valor)* investidorDAO.consultarCotacao();
                 if (saldoAtual < custoTotal) {
                     JOptionPane.showMessageDialog(null, "Valor inválido para compra!");
                     return;
@@ -173,7 +174,7 @@ public class ControllerCripto {
                 }
 
                 // Cálculo do valor recebido
-                double valorRecebido = quantidadeVenda * Etherum.vendaTaxa();
+                double valorRecebido = quantidadeVenda * Etherum.vendaTaxa()* investidorDAO.consultarCotacao();
                 double novoSaldo = saldoAtual + valorRecebido;
                 double novaQuantidadeEthereum = quantidadeAtualEthereum - quantidadeVenda;
 
@@ -218,7 +219,7 @@ public class ControllerCripto {
                     return;
                 }
 
-                double valorRecebido = quantidadeVenda * Bitcoin.vendaTaxa();
+                double valorRecebido = quantidadeVenda * Bitcoin.vendaTaxa()* investidorDAO.consultarCotacao();
                 double novoSaldo = saldoAtual + valorRecebido;
                 double novaQuantidadeBitcoin = quantidadeAtualBitcoin - quantidadeVenda;
 
@@ -262,7 +263,7 @@ public class ControllerCripto {
                     return;
                 }
 
-                double valorRecebido = quantidadeVenda * Ripple.vendaTaxa();
+                double valorRecebido = quantidadeVenda * (Ripple.vendaTaxa() * investidorDAO.consultarCotacao());
                 double novoSaldo = saldoAtual + valorRecebido;
                 double novaQuantidadeRipple = quantidadeAtualRipple - quantidadeVenda;
 
@@ -281,5 +282,37 @@ public class ControllerCripto {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, "Erro ao realizar venda: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
         }
+    }
+    
+    public String atualizarCotacao(){
+        Conexao conexao = new Conexao();
+        try {
+            Connection conn = conexao.getConnection();
+            investidorDAO = new InvestidorDAO(conn);
+            investidorDAO.atualizarCotacao(Moedas.cotacao());
+            
+            return String.format("%.2f%%", (investidorDAO.consultarCotacao()- 1) * 100);
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Erro ao realizar depósito: " + e.getMessage());
+        }
+        return "";
+    }
+    
+    public String lerCotacao(){
+        Conexao conexao = new Conexao();
+        try {
+            Connection conn = conexao.getConnection();
+            investidorDAO = new InvestidorDAO(conn);
+            investidorDAO.atualizarCotacao(Moedas.cotacao());
+            
+            return String.format("%.2f%%", (investidorDAO.consultarCotacao()- 1) * 100);
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Erro ao realizar depósito: " + e.getMessage());
+        }
+        return "";
     }
 }

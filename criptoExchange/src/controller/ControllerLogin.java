@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import javax.swing.JFrame;
 import model.Carteira;
 import model.Investidor;
+import model.Moedas;
 import view.InvestidorView;
 /**
  *
@@ -47,6 +48,10 @@ public class ControllerLogin {
                 String ripple = res.getString("Ripple");
                 String bitcoin = res.getString("Bitcoin");
                 String etherum = res.getString("Etherum");
+               if (!dao.existeCotacao()) { // Método que verifica se há cotações
+                // Inserir cotações iniciais
+                dao.inserirCotacao(Moedas.cotacao());
+               }
                 Carteira investidorLogado = new Carteira(reais,bitcoin,ripple,etherum,nome, cpf, senha, idade);
                 InvestidorController.setInvestidorLogado(investidorLogado);
                 InvestidorController c = new InvestidorController(view);
