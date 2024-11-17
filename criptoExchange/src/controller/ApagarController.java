@@ -37,7 +37,7 @@ public class ApagarController {
                 Connection conn = conexao.getConnection();
                 
                 InvestidorDAO dao = new InvestidorDAO(conn);
-                dao.excluirExtrato(investidor, cpf);
+                
                 dao.excluir(investidor, cpf);
                 
                 
