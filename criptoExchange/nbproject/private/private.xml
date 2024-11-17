@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/manga/NetBeansProjects/CriptoExchange/criptoExchange/src/view/CadastroView.java</file>
+            <file>file:/home/manga/NetBeansProjects/CriptoExchange/criptoExchange/src/view/InvestidorView.java</file>
+            <file>file:/home/manga/NetBeansProjects/CriptoExchange/criptoExchange/src/view/AtualizarView.java</file>
+            <file>file:/home/manga/NetBeansProjects/CriptoExchange/criptoExchange/src/controller/ConfigController.java</file>
+            <file>file:/home/manga/NetBeansProjects/CriptoExchange/criptoExchange/src/view/LoginView.java</file>
+            <file>file:/home/manga/NetBeansProjects/CriptoExchange/criptoExchange/src/controller/InvestidorController.java</file>
+            <file>file:/home/manga/NetBeansProjects/CriptoExchange/criptoExchange/src/controller/ApagarController.java</file>
+            <file>file:/home/manga/NetBeansProjects/CriptoExchange/criptoExchange/src/view/ConfigView.java</file>
+            <file>file:/home/manga/NetBeansProjects/CriptoExchange/criptoExchange/src/DAO/Conexao.java</file>
+            <file>file:/home/manga/NetBeansProjects/CriptoExchange/criptoExchange/src/DAO/Conn.java</file>
+            <file>file:/home/manga/NetBeansProjects/CriptoExchange/criptoExchange/src/criptoexchange/CriptoExchange.java</file>
+            <file>file:/home/manga/NetBeansProjects/CriptoExchange/criptoExchange/src/controller/ControllerCadastro.java</file>
+            <file>file:/home/manga/NetBeansProjects/CriptoExchange/criptoExchange/src/controller/ControllerLogin.java</file>
+        </group>
+    </open-files>
+</project-private>
