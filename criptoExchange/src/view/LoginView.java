@@ -147,9 +147,6 @@ public class LoginView extends javax.swing.JFrame {
         c.loginAluno();
     }//GEN-LAST:event_btEntrarActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
 
     public JButton getBtCadastro() {
         return btCadastro;
@@ -203,9 +200,6 @@ public class LoginView extends javax.swing.JFrame {
         return txtSenha;
     }
 
-    /**
-     * @param args the command line arguments
-     */
     public void setTxtSenha(JPasswordField txtSenha) {
         this.txtSenha = txtSenha;
     }
